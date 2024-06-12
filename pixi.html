@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+
+      #pixi-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      #content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        z-index: 1;
+      }
+
+      #home-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: lightgreen;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pixi-container"></div>
+    <div id="content">
+      <h1>Welcome to our City Real Estate Website</h1>
+      <p>Discover your dream home today!</p>
+    </div>
+
+    <button id="home-button" onclick="goToHome()">Go to Home</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.3/pixi.min.js"></script>
+    <script>
+      // Create Pixi.js Application
+      const app = new PIXI.Application({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        backgroundColor: 0x3e8f3e, // Green color
+      });
+      document.getElementById("pixi-container").appendChild(app.view);
+
+      // Add Pixi.js Animation
+      const graphics = new PIXI.Graphics();
+      app.stage.addChild(graphics);
+
+      app.ticker.add(() => {
+        graphics.clear();
+        const animationColor = 0xffcc00; // Color for the little animations (yellow)
+        graphics.beginFill(animationColor);
+        graphics.drawRect(
+          Math.random() * app.screen.width,
+          Math.random() * app.screen.height,
+          50,
+          50
+        );
+        graphics.endFill();
+      });
+
+      // Handle window resize
+      window.addEventListener("resize", () => {
+        app.renderer.resize(window.innerWidth, window.innerHeight);
+      });
+
+      // Function to navigate to home page
+      function goToHome() {
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>
