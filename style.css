@@ -294,7 +294,7 @@ a img.aligncenter {
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
-  color: #21759b;
+  color: #0e2e3c;
   display: block;
   font-size: 14px;
   font-size: 0.875rem;
@@ -401,7 +401,7 @@ body.realestate_version .social-links:hover a {
 }
 
 .header_style_01 .navbar-default .navbar-nav > li a.active {
-  background-color: #a8cf45;
+  background-color: #000000;
   color: #ffffff;
   border-radius: 2px;
 }
@@ -522,7 +522,7 @@ body.realestate_version
   line-height: 43px;
   width: 45px;
   color: #fff;
-  background: #a8cf45;
+  background: #000000;
   border: none;
   transition: all 0.3s ease-in-out;
   border-radius: 2px;
@@ -577,7 +577,7 @@ body.realestate_version
   display: block;
   width: 48px;
   color: #fff;
-  background: #a8cf45;
+  background: #000000;
   border: 1px solid #fff;
   border-left: none;
   line-height: 40px;
@@ -1096,7 +1096,7 @@ body.realestate_version
 
 .top-feature .center .single-feature,
 .top-feature .single-feature:hover {
-  border-bottom-color: #a8cf45;
+  border-bottom-color: #000000;
 }
 
 /*------------------------------------------------------------------
@@ -1265,7 +1265,7 @@ body.realestate_version
   position: absolute;
   top: 20px;
   right: 12px;
-  background: #a8cf45;
+  background: #000000;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -1284,7 +1284,7 @@ body.realestate_version
   z-index: 4;
   color: #fff;
   text-align: left;
-  background: #a8cf45;
+  background: #000000;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -1392,7 +1392,7 @@ body.realestate_version
 
 .post-media {
   position: relative;
-  border: 8px solid #a8cf45;
+  border: 8px solid #000000;
 }
 
 .post-media img {
@@ -1416,7 +1416,7 @@ body.realestate_version
 }
 
 .hoverbutton {
-  background-color: #a8cf45;
+  background-color: #000000;
   position: absolute;
   color: #1f1f1f !important;
   top: 48%;
@@ -2172,7 +2172,7 @@ select.mobile-device {
 
 .footer-links a:hover,
 .footer a:hover {
-  color: #a8cf45;
+  color: #000000;
 }
 
 .footer-links li {
@@ -2390,7 +2390,7 @@ select.mobile-device {
   right: 0;
   bottom: 0;
   left: 0;
-  background: #a8cf45;
+  background: #000000;
   z-index: 11000;
   position: fixed;
   display: block;
@@ -2553,7 +2553,7 @@ select.mobile-device {
 }
 
 #breadcrumbs {
-  background: #a8cf45;
+  background: #000000;
   padding: 10px 20px;
   position: absolute;
   right: 0px;
@@ -2615,7 +2615,7 @@ select.mobile-device {
   display: block;
   font-size: 28px;
   color: #ffffff;
-  background: #a8cf45;
+  background: #000000;
   width: 48px;
   height: 48px;
   line-height: 48px;
