@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #pixi-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #ffffff; /* Changed text color to black */
+            font-family: Arial, sans-serif;
+            z-index: 1;
+        }
+
+        #home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgb(226, 226, 226);
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="pixi-container">
+        <button id="home-button" onclick="goToHome()">Go to Home</button>
+    </div>
+    <div id="content">
+        <h1>SWEET DREAMS ARE MADE OF US!</h1>
+        <p>Fulfill your luxurious fantasies!</p>
+    </div>
+    <audio id="background-audio" autoplay>
+        <source src="pixiaudio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.3/pixi.min.js"></script>
+    <script>
+          window.addEventListener('load', () => {
+            const audio = document.getElementById('background-audio');
+            audio.play().catch(error => {
+                console.error('Audio playback failed:', error);
+            });
+        });
+        const app = new PIXI.Application({
+            width: window.innerWidth,
+            height: window.innerHeight,
+            backgroundColor: 0x0000, // White background color
+        });
+        document.getElementById("pixi-container").appendChild(app.view);
+
+        // Car model names
+        const carModels = [
+            "Tesla Model S", "BMW i8", "Audi R8", "Mercedes AMG", "Porsche 911",
+            "Lamborghini Aventador", "Ferrari 488", "Maserati Quattroporte", 
+            "Jaguar F-Type", "Aston Martin DB11", "Bentley Continental GT", 
+            "Rolls-Royce Ghost", "McLaren 720S", "Bugatti Chiron", 
+            "Chevrolet Corvette", "Ford Mustang", "Nissan GT-R", 
+            "Dodge Charger", "Alfa Romeo Giulia"
+        ];
+        const texts = [];
+
+        // Add car model names to the stage
+        carModels.forEach(model => {
+            const text = new PIXI.Text(model, {
+                fontFamily: 'Arial',
+                fontSize: 24,
+                fill: 0xFFFFFF, // Black text color
+                align: 'center'
+            });
+            text.x = Math.random() * app.screen.width;
+            text.y = Math.random() * app.screen.height;
+            text.vx = (Math.random() - 0.5) * 2;
+            text.vy = (Math.random() - 0.5) * 2;
+            app.stage.addChild(text);
+            texts.push(text);
+        });
+
+        // Update the position of the car model names
+        app.ticker.add(() => {
+            texts.forEach(text => {
+                text.x += text.vx;
+                text.y += text.vy;
+
+                if (text.x < 0 || text.x > app.screen.width) {
+                    text.vx *= -1;
+                }
+                if (text.y < 0 || text.y > app.screen.height) {
+                    text.vy *= -1;
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener("resize", () => {
+            app.renderer.resize(window.innerWidth, window.innerHeight);
+        });
+
+        // Function to navigate to home page
+        function goToHome() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
